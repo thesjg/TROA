@@ -8,6 +8,12 @@ time ./nodispatch-inline >/dev/null
 echo "base"
 time ./base >/dev/null
 
+echo "pseudojit 1"
+time ./pseudojit1 >/dev/null
+
+echo "pseudojit 1 (unrolled)"
+time ./pseudojit1-unrolled >/dev/null
+
 echo "goto direct"
 time ./goto-direct >/dev/null
 
@@ -65,5 +71,3 @@ time ./call-nodispatch >/dev/null
 echo "call (switch)"
 time ./call-switch >/dev/null
 
-echo "pseudojit 1"
-time ./pseudojit1 >/dev/null

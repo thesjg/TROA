@@ -1,5 +1,11 @@
 CFLAGS=	-O1
 
+all:	nodispatch nodispatch-inline base goto mgoto mgoto1 mgoto2 \
+	goto-direct goto-direct2 goto-direct3 goto-direct-switch funcptr mdirect \
+	direct mfuncptr switch switch-direct switch-direct-inline \
+	scarygoto scarygoto-inline call-nodispatch call-switch pseudojit1 \
+	pseudojit1-unrolled
+
 nodispatch: nodispatch.c
 nodispatch-inline: nodispatch-inline.c
 base: base.c
@@ -23,14 +29,11 @@ switch-direct-inline: switch-direct-inline.c
 call-nodispatch: call-nodispatch.c
 call-switch: call-switch.c
 pseudojit1: pseudojit1.c
-
-all:	nodispatch nodispatch-inline base goto mgoto mgoto1 mgoto2 \
-	goto-direct goto-direct2 goto-direct3 goto-direct-switch funcptr mdirect \
-	direct mfuncptr switch switch-direct switch-direct-inline \
-	scarygoto scarygoto-inline call-nodispatch call-switch pseudojit1
+pseudojit1-unrolled: pseudojit1-unrolled.c
 
 clean:
 	rm nodispatch nodispatch-inline base goto mgoto mgoto1 mgoto2 \
 	goto-direct goto-direct2 goto-direct3 goto-direct-switch funcptr mdirect \
 	direct mfuncptr switch switch-direct switch-direct-inline \
-	scarygoto scarygoto-inline call-nodispatch call-switch psuedojit1
+	scarygoto scarygoto-inline call-nodispatch call-switch pseudojit1 \
+        pseudojit1-unrolled
