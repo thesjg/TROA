@@ -64,3 +64,6 @@ time ./call-nodispatch >/dev/null
 
 echo "call (switch)"
 time ./call-switch >/dev/null
+
+echo "pseudojit 1"
+time ./pseudojit1 >/dev/null
